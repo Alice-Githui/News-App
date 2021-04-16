@@ -1,5 +1,3 @@
-{% extends 'base.html'%}
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +9,14 @@
         {% endif %}
     </head>
     <body>
-        <h1>{{ message }}</h1>
+        <!-- All news section -->
+        <h3>News Sources</h3>
+        <ul>
+        {% for source_news in sources %}
+            <li>{{ source_news.name }}</li>
+        {% endfor %}
+
+        </ul>
     </body>
 </html>
 

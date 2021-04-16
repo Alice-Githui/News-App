@@ -2,9 +2,9 @@ class Config:
     '''
     contains general configuration of parent class
     '''
-    NEWS_API_BASE_URL ='https://newsapi.org/v2/everything/{}?api_key={}'
-
-class ProdConfig:
+    NEWS_API_BASE_URL='https://newsapi.org/v2/{}?apiKey={}'
+    
+class ProdConfig(Config):
     '''
     contains configuration that will be used in production - child class
 
@@ -13,7 +13,7 @@ class ProdConfig:
     '''
     pass
 
-class DevConfig:
+class DevConfig(Config):
     '''
     contains configuration that will be used in development. 
 
