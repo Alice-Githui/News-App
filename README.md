@@ -36,4 +36,5 @@ The MIT License (MIT)
 For any further questions, contributions or feedback ,get in touch with me through the following contacts;
 
 slack channel: @Alice Githui
+<br>
 email: gnyokabi.alice@gmail.com
