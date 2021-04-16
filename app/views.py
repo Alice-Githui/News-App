@@ -7,4 +7,7 @@ def index():
     '''
     View the root page that returns the index page and its data/contents
     '''
-    return render_template('index.html')
+
+    title = 'Welcome to the Daily News App. Catch the day\'s news all in one place'
+    message = 'Welcome to this app'
+    return render_template('index.html', title = title, message = message)
