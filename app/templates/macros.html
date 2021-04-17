@@ -10,3 +10,13 @@
     </div>    
     {% endfor %}
 {% endmacro %}
+
+{% macro searchNews(news) %}
+    {% for news_item in news %}
+        <div>
+            <p>{{news_item.title}}</p>
+            <p>{{news_item.content}}</p>
+            
+        </div>
+    {% endfor %}
+{% endmacro %}
