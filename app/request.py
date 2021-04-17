@@ -11,11 +11,11 @@ apiKey = app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
 print(base_url)
 
-def get_news(category):
+def get_news(category,query):
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = base_url.format(category, apiKey)
+    get_news_url = base_url.format(category,query,apiKey)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -23,8 +23,8 @@ def get_news(category):
 
         news_results = None
 
-        if get_news_response['sources']:
-            news_results_list = get_news_response['sources']
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
             news_results = process_results(news_results_list)
 
     return news_results
@@ -41,16 +41,19 @@ def process_results(news_list):
     '''
     news_results = []
     for news_item in news_list:
-        id = news_item.get('id')
-        name = news_item.get('name')
+        source = news_item.get('source')
+        # name = news_item.get('source.name')
+        author = news_item.get('author')
+        title = news_item.get('title')
         description = news_item.get('description')
         url = news_item.get('url')
-        category = news_item.get('category')
-        language = news_item.get('language')
-        country = news_item.get('country')
+        urlToImage = news_item.get('urlToImage')
+        publishedAt = news_item.get('publishedAt')
+        content = news_item.get('content')
+       
 
-        if url:
-            news_object = News(id, name, description, url, category, language, country)
+        if urlToImage:
+            news_object = News(source, author, title, description, url, urlToImage, publishedAt, content)
             news_results.append(news_object)
 
     return news_results

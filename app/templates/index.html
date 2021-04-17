@@ -14,14 +14,12 @@
     <body>
         {% block content %}
         <!-- All news section -->
-        <h3>News Sources</h3>
+        <!-- <h3>News Sources</h3>
         <ul>
-        <!-- {% for source_news in sources %}
-            <li>{{ source_news.name }}</li>
-        {% endfor %} -->
             {{macro.displayNewsList(sources)}}
-
-        </ul>
+        </ul> -->
+        <h1>All News </h1>
+            {{macro.displayNewsList(everything)}}
         {% endblock %}
     </body>
 </html>
