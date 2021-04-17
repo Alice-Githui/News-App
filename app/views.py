@@ -13,4 +13,5 @@ def index():
     print(all_news)
     title = 'Welcome to the Daily News App. Catch the day\'s news all in one place'
     # message = 'Welcome to this app'
-    return render_template('index.html', title = title, everything=all_news)
+    return render_template('newsarticles.html', title = title, everything=all_news)
+
