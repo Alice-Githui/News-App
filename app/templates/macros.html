@@ -1,13 +1,23 @@
 {% macro displayNews(category) %}
     {% for category in category %}
-    <div>
-        <img src={{category.urlToImage}} alt= {{category.title}} width="500">
-        <h3>{{category.title}}</h3>
-        <p><a href = {{category.url}}>{{category.url}}</a></p>
-        <div>
-            <p>{{category.content}}</p>
+        <div class = "row">
+            <div class="col-md-7">
+                <img src = >
+
+            </div>
+            <div class ="col-md-5">
+                <div>
+                    <div class ="card" id="news-card" style= "margin: 10px; border:1px solid black; border-radius: 10px;">
+                        <h3 style = "font-size: 18px; margin:5px">{{category.title}}</h3>
+                        <img src={{category.urlToImage}} alt= {{category.title}} width="400" style = "margin: 20px;">
+                        <div style = "font-size: 16px; margin: 5px">
+                            <p>{{category.content | truncate (200)}}<a href = {{category.url}} target = "blank">Read the entire article</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>    
+           
     {% endfor %}
 {% endmacro %}
 

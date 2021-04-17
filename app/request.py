@@ -93,7 +93,7 @@ def get_sources():
         return final_results
 
 def search_news(news_title):
-    search_news_url = 'https://newsapi.org/v2/sources?q={}&apiKey={}'.format(news_title,apiKey)
+    search_news_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(news_title,apiKey)
 
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()
@@ -101,8 +101,8 @@ def search_news(news_title):
 
         search_news_results = None
 
-        if search_news_response['sources']:
-            search_news_list = search_news_response['sources']
+        if search_news_response['articles']:
+            search_news_list = search_news_response['articles']
             search_movie_results = process_results(search_news_list)
 
     return search_news_results
