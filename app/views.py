@@ -1,17 +1,25 @@
 from flask import render_template
 from app import app
-from .request import get_news
+from .request import get_sources, get_news
 
 #Views/Routes to our apps
 @app.route('/')
 def index():
     '''
-    View the root page that returns the index page and its data/contents
+    View root page function that returns the index page and its data
     '''
-    #Getting all news from the api
-    all_news = get_news('everything', 'techcrunch')
-    print(all_news)
+    #Getting the source list
+    var_sources = get_sources('sources')
+    print(var_sources)
     title = 'Welcome to the Daily News App. Catch the day\'s news all in one place'
-    # message = 'Welcome to this app'
-    return render_template('newsarticles.html', title = title, everything=all_news)
+    return render_template('index.html', title=title, sources=var_sources)
 
+@app.route('/news/category')
+def news(category):
+    '''
+    View the news page function that returns the news details page and the data
+    '''
+    news = get_news(category)
+    title = f'{news.title}'
+
+    return render_template('newsarticles.html', title=title, news=news)

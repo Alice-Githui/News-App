@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 {% import 'macros.html' as macro %}
 
 <!DOCTYPE html>
@@ -13,14 +13,11 @@
     </head>
     <body>
         {% block content %}
-        <!-- All news section -->
-        <!-- <h3>News Sources</h3>
+        <!-- Sources section -->
+        <h3>News Sources</h3>
         <ul>
-            {{macro.displayNewsList(sources)}}
-        </ul> -->
-        <h1>All News </h1>
-            {{macro.displayNewsList(everything)}}
+            {{ macro.displaySourcesList(sources)}}
+        </ul>
         {% endblock %}
     </body>
 </html>
-

@@ -1,26 +1,18 @@
-{% extends 'base.html' %}
-{% import 'macros.html' as macro %}
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset ="utf-8">
-        {% if title%}
-        <title>{{title}}</title>
-        {% else %}
-        <title>Welcome to the Daily News App. Catch the day\'s news all in one place</title>
-        {% endif %}
-    </head>
-    <body>
-        {% block content %}
-        <!-- All news section -->
-        <!-- <h3>News Sources</h3>
-        <ul>
-            {{macro.displayNewsList(sources)}}
-        </ul> -->
-        <h1>All News </h1>
-            {{macro.displayNewsList(everything)}}
-        {% endblock %}
-    </body>
-</html>
-
+{% extends 'base.html'%}
+<!-- Content block -->
+{% block content %}
+<div class="container">
+    <!-- News articles -->
+    <div class="row">
+        <div class="col-md-6 card">
+            <img src = {{news.urlToImage}}>
+        </div>
+        <div class="col-md-6">
+            <p>{{news.author}}</p>
+            <p>{{news.title}}</p>
+            <p>{{news.description}}</p>
+            <p>{{news.publishedAt}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
