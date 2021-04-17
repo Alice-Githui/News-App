@@ -1,18 +1,10 @@
-{% extends 'base.html'%}
-<!-- Content block -->
-{% block content %}
+<!-- {% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+ Content block -->
+
+<!-- {% block content %}
 <div class="container">
-    <!-- News articles -->
-    <div class="row">
-        <div class="col-md-6 card">
-            <img src = {{news.urlToImage}}>
-        </div>
-        <div class="col-md-6">
-            <p>{{news.author}}</p>
-            <p>{{news.title}}</p>
-            <p>{{news.description}}</p>
-            <p>{{news.publishedAt}}</p>
-        </div>
-    </div>
+    <h3>All News</h3>
+    <ul>{{macro.displayNewsList(everything)}}</ul>
 </div>
-{% endblock %}
+{% endblock %}  -->

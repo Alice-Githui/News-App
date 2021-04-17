@@ -8,18 +8,16 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    #Getting the source list
-    var_sources = get_sources('sources')
-    print(var_sources)
-    title = 'Welcome to the Daily News App. Catch the day\'s news all in one place'
-    return render_template('index.html', title=title, sources=var_sources)
+    sports = get_news('sports')
+    headlines = get_news('headlines')
+    technology = get_news('technology')
+    general = get_news('general')
+    beauty = get_news('beauty')
+    entertainment = get_news('entertainment')
+    trending = get_news('trending')
+    sources = get_sources()
 
-@app.route('/news/category')
-def news(category):
-    '''
-    View the news page function that returns the news details page and the data
-    '''
-    news = get_news(category)
-    title = f'{news.title}'
+    title = "Welcome to the Daily News App. Catch the day\'s news all in one place"
 
-    return render_template('newsarticles.html', title=title, news=news)
+    return render_template('index.html', title= title, sports=sports, headlines= headlines, technology=technology, general=general, beauty=beauty, entertainment= entertainment, trending=trending, sources=sources)
+

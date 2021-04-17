@@ -10,13 +10,22 @@
         {% else %}
         <title>Welcome to the Daily News App. Catch the day\'s news all in one place</title>
         {% endif %}
+        <!-- Styles block -->
     </head>
     <body>
         {% block content %}
         <!-- Sources section -->
-        <h3>News Sources</h3>
+        <h3>Technology News</h3>
         <ul>
-            {{ macro.displaySourcesList(sources)}}
+            {{ macro.displayNews(technology)}}
+        </ul>
+        <h3>Business</h3>
+        <ul>
+            {{macro.displayNews(headlines)}}
+        </ul>
+        <h3>Sports News</h3>
+        <ul>
+            {{macro.displayNews(sports)}}
         </ul>
         {% endblock %}
     </body>
