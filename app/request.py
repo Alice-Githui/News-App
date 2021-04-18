@@ -5,8 +5,8 @@ from datetime import datetime
 
 today = datetime.today().strftime('%Y-%M-%D')
 
-News = news.News
-NewsSource = news_source.NewsSource
+# News = news.News
+# NewsSource = news_source.NewsSource
 
 #Getting api key
 apiKey = None
@@ -17,16 +17,16 @@ base_url = None
 source_url = None
 
 def configure_request(app):
-    global apiKey, base_url, source_url
-    apiKey = app.config['NEWS_API_KEY']
-    base_url = app.config["NEWS_API_BASE_URL"]
-    source_url = app.config["NEWS_SOURCE_BASE_URL"]
+    global api_key, base_url, source_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
+    source_url = app.config['NEWS_SOURCE_BASE_URL']
 
 def get_news(category):
     '''
     Function that takes in the news everything api and returns a json response
     '''
-    get_news_details = base_url.format(category,apiKey)
+    get_news_details = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_news_details) as url:
         news_details_data = url.read()
@@ -74,7 +74,7 @@ def get_sources():
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = source_url.format(apiKey)
+    get_sources_url = source_url.format(api_key)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
