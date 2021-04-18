@@ -5,16 +5,42 @@
             <a href="{{source.url}}" class="btn">{{source.name}}</a>
         </p>
     {% endfor %} -->
-    {% for category in category %}
-        <!-- <div class = "row"> -->
-            <!-- <div class="col-md-7">
-                <h2 style = "font-style: italic; font-size: 20px;">Leading the Way People Read</h2>
-                <img src = '../static/Images/image.jpg'>             
-
-            </div> -->
+    {% for category in category [:3] %}
             <div class ="col-md-4">
-                <div>
-                    <div class ="card" id="news-card" style= "margin: 10px; border:1px solid black; border-radius: 10px;">
+                <div style="height: 500px;">
+                    <div class ="card" id="news-card" style= "margin-top: 10px; border:1px solid black; border-radius: 8px;">
+                        <h3 style = "font-size: 18px; margin:5px">{{category.title}}</h3>
+                        <p style = "font-size: 14px;">Published On: {{category.publishedAt}}</p>
+                        <img src={{category.urlToImage}} alt= {{category.title}} width="300" style = "margin: 20px;">
+                        <div style = "font-size: 16px; margin: 5px">
+                            <p>{{category.content | truncate (200)}}<a href = {{category.url}} target = "blank">Read the entire article</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+           
+    {% endfor %}
+    {% for category in category [3:6] %}
+            <div class ="col-md-4">
+                <div style="height: 500px;">
+                    <div class ="card" id="news-card" style= "margin-top: 10px; border:1px solid black; border-radius: 8px;">
+                        <h3 style = "font-size: 18px; margin:5px">{{category.title}}</h3>
+                        <p style = "font-size: 14px;">Published On: {{category.publishedAt}}</p>
+                        <img src={{category.urlToImage}} alt= {{category.title}} width="300" style = "margin: 20px;">
+                        <div style = "font-size: 16px; margin: 5px">
+                            <p>{{category.content | truncate (200)}}<a href = {{category.url}} target = "blank">Read the entire article</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+           
+    {% endfor %}
+    {% for category in category [6:9] %}
+            <div class ="col-md-4">
+                <div style="height: 500px;">
+                    <div class ="card" id="news-card" style= "margin-top: 10px; border:1px solid black; border-radius: 8px;">
                         <h3 style = "font-size: 18px; margin:5px">{{category.title}}</h3>
                         <p style = "font-size: 14px;">Published On: {{category.publishedAt}}</p>
                         <img src={{category.urlToImage}} alt= {{category.title}} width="300" style = "margin: 20px;">
