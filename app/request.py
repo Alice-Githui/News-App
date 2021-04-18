@@ -2,6 +2,9 @@ from app import app
 import urllib.request, json
 from .models import news
 from .model_s import news_source
+from datetime import datetime
+
+today = datetime.today().strftime('%Y-%M-%D')
 
 News = news.News
 NewsSource = news_source.NewsSource
