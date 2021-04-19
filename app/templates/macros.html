@@ -7,8 +7,8 @@
     {% endfor %} -->
     {% for category in category [:3] %}
             <div class ="col-md-4">
-                <div style="height: 500px;">
-                    <div class ="card" id="news-card" style= "margin-top: 10px; border:1px solid black; border-radius: 8px;">
+                <div>
+                    <div class ="card" id="news-card" style= "margin-top: 10px; box-sizing: border-box; border-radius: 8px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); height:500px; ">
                         <h3 style = "font-size: 18px; margin:5px">{{category.title}}</h3>
                         <p style = "font-size: 14px;">Published On: {{category.publishedAt}}</p>
                         <img src={{category.urlToImage}} alt= {{category.title}} width="300" style = "margin: 20px;">
@@ -23,8 +23,8 @@
     {% endfor %}
     {% for category in category [3:6] %}
             <div class ="col-md-4">
-                <div style="height: 500px;">
-                    <div class ="card" id="news-card" style= "margin-top: 10px; border:1px solid black; border-radius: 8px;">
+                <div>
+                    <div class ="card" id="news-card" style= "margin-top: 10px; box-sizing: border-box; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); height:500px; ">
                         <h3 style = "font-size: 18px; margin:5px">{{category.title}}</h3>
                         <p style = "font-size: 14px;">Published On: {{category.publishedAt}}</p>
                         <img src={{category.urlToImage}} alt= {{category.title}} width="300" style = "margin: 20px;">
@@ -39,8 +39,8 @@
     {% endfor %}
     {% for category in category [6:9] %}
             <div class ="col-md-4">
-                <div style="height: 500px;">
-                    <div class ="card" id="news-card" style= "margin-top: 10px; border:1px solid black; border-radius: 8px;">
+                <div>
+                    <div class ="card" id="news-card" style= "margin-top: 10px; box-sizing: border-box; border-radius: 8px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); height: 500px;">
                         <h3 style = "font-size: 18px; margin:5px">{{category.title}}</h3>
                         <p style = "font-size: 14px;">Published On: {{category.publishedAt}}</p>
                         <img src={{category.urlToImage}} alt= {{category.title}} width="300" style = "margin: 20px;">
