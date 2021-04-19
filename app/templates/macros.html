@@ -55,10 +55,12 @@
     {% endfor %}
 {% endmacro %}
 
-{% macro searchNews(news) %}
-    {% for news_item in news %}
+{% macro searchNews(news_title) %}
+    {% for news_item in news_title %}
         <div>
             <p>{{news_item.title}}</p>
+            <p>{{news_item.author}}</p>
+            <p>{{news_item.url}}</p>
             <p>{{news_item.content}}</p>
             
         </div>

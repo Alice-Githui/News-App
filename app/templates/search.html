@@ -1,12 +1,23 @@
-<!-- {% extends 'base.html' %}
-{% import 'macros.html' as macro %}
+{% extends 'base.html' %}
+<!-- {% import 'macros.html' as macro %} -->
 
-{% block content %}
-    <div class="container">
-        <div class="row">
-            <ul>
-                {{ macro.displayNews(news) }}
-            </ul>
-        </div>
-    </div>
+<!-- {% block content %}
+    {% for newsi in news_title %}
+        <ul>
+            <li>{{newsi.title}}</li>
+            <li>{{newsi.content}}</li>
+        </ul>
+    {% endfor %}
+    
 {% endblock %} -->
+{{message}}
+
+
+<div class="container">
+    <div class="row">
+        <h3>Found articles </h3>
+        <ul>
+            {{ macro.searchNews(news) }}
+        </ul>
+    </div>
+</div>
